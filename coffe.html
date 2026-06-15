@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Moon Coffee Shop</title>
+
+
+<style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+background:#f6eee7;
+
+color:#3b2518;
+
+}
+
+
+
+/* NAV */
+
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 70px;
+
+background:#2c1b12dd;
+
+backdrop-filter:blur(10px);
+
+z-index:99;
+
+}
+
+
+
+.logo{
+
+color:#f2c48d;
+
+font-size:28px;
+
+font-weight:bold;
+
+}
+
+
+
+nav ul{
+
+display:flex;
+list-style:none;
+
+}
+
+
+
+nav li{
+
+margin-left:30px;
+
+}
+
+
+
+nav a{
+
+text-decoration:none;
+
+color:white;
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+flex-direction:column;
+
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+
+url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1600");
+
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+
+
+.hero h1{
+
+font-size:75px;
+
+color:white;
+
+}
+
+
+
+.hero span{
+
+color:#e5b77a;
+
+}
+
+
+
+.hero p{
+
+color:white;
+
+font-size:22px;
+
+margin:20px;
+
+}
+
+
+
+.hero button{
+
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:30px;
+
+background:#c48a4a;
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+}
+
+
+
+
+
+
+
+.title{
+
+text-align:center;
+
+font-size:45px;
+
+margin:90px 0 40px;
+
+color:#6b3e20;
+
+}
+
+
+
+
+
+/* MENU */
+
+
+.menu{
+
+padding:30px 70px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+
+
+
+.card{
+
+background:white;
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:0 15px 30px #0002;
+
+transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+
+.card img{
+
+width:100%;
+
+height:280px;
+
+object-fit:cover;
+
+}
+
+
+
+.info{
+
+padding:25px;
+
+}
+
+
+
+
+.info h2{
+
+color:#6b3e20;
+
+}
+
+
+
+.price{
+
+color:#c48a4a;
+
+font-weight:bold;
+
+font-size:20px;
+
+margin:15px 0;
+
+}
+
+
+
+.order{
+
+width:100%;
+
+padding:13px;
+
+border:none;
+
+border-radius:25px;
+
+background:#6b3e20;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+
+
+
+
+
+/* GALLERY */
+
+
+.gallery{
+
+padding:40px 70px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+}
+
+
+
+.gallery img{
+
+width:100%;
+
+height:250px;
+
+object-fit:cover;
+
+border-radius:25px;
+
+transition:.3s;
+
+}
+
+
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+
+
+.about{
+
+width:80%;
+
+margin:auto;
+
+padding:50px;
+
+background:white;
+
+border-radius:30px;
+
+text-align:center;
+
+line-height:2;
+
+}
+
+
+
+
+
+.contact{
+
+width:70%;
+
+margin:50px auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+
+
+.contact input,
+.contact textarea{
+
+padding:15px;
+
+border-radius:20px;
+
+border:1px solid #ddd;
+
+}
+
+
+
+.contact button{
+
+padding:15px;
+
+border:none;
+
+border-radius:25px;
+
+background:#6b3e20;
+
+color:white;
+
+}
+
+
+
+
+
+footer{
+
+margin-top:80px;
+
+background:#2c1b12;
+
+color:white;
+
+padding:40px;
+
+text-align:center;
+
+}
+
+
+
+
+
+@media(max-width:800px){
+
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+
+.menu,
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+.hero{
+
+padding:20px;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+
+<nav>
+
+
+<div class="logo">
+
+☕ Moon Coffee
+
+</div>
+
+
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#menu">Menu</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+
+</nav>
+
+
+
+
+
+
+
+<section class="hero" id="home">
+
+
+<h1>
+
+Coffee <span>Moment</span>
+
+</h1>
+
+
+<p>
+
+Warm coffee, cozy place, happy memories ☕
+
+</p>
+
+
+<button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+
+View Menu
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+<h1 class="title">
+
+Our Coffee Menu
+
+</h1>
+
+
+
+
+<section class="menu" id="menu">
+
+
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800">
+
+<div class="info">
+
+<h2>Caramel Latte</h2>
+
+<p class="price">
+
+Rp 35.000
+
+</p>
+
+<button class="order">
+
+Order
+
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800">
+
+<div class="info">
+
+<h2>Classic Coffee</h2>
+
+<p class="price">
+
+Rp 25.000
+
+</p>
+
+<button class="order">
+
+Order
+
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800">
+
+<div class="info">
+
+<h2>Espresso</h2>
+
+<p class="price">
+
+Rp 30.000
+
+</p>
+
+<button class="order">
+
+Order
+
+</button>
+
+</div>
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<h1 class="title">
+
+Cafe Gallery
+
+</h1>
+
+
+
+<section class="gallery" id="gallery">
+
+
+<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=700">
+
+
+<img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=700">
+
+
+<img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=700">
+
+
+</section>
+
+
+
+
+
+
+
+
+<h1 class="title">
+
+About Coffee
+
+</h1>
+
+
+
+<div class="about">
+
+
+<h2>
+
+Our Cozy Cafe ☕
+
+</h2>
+
+
+<p>
+
+Moon Coffee offers a warm atmosphere and quality beverages to accompany your every day.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<h1 class="title" id="contact">
+
+Contact
+
+</h1>
+
+
+
+<div class="contact">
+
+
+<input placeholder="Name">
+
+
+<input placeholder="Email">
+
+
+<textarea placeholder="Message"></textarea>
+
+
+<button onclick="send()">
+
+Send
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+
+<h2>
+
+Moon Coffee Shop ☕
+
+</h2>
+
+
+<p>
+
+Coffee • Comfort • Happiness
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+<script>
+
+
+function send(){
+
+alert(" Thank you for contacting Moon Coffee!");
+
+}
+
+
+
+document.querySelectorAll(".order").forEach(btn=>{
+
+btn.onclick=function(){
+
+alert(" Your coffee order has been added!");
+
+}
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>

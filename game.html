@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Noni Game Store</title>
+
+
+<style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+background:#080812;
+
+color:white;
+
+}
+
+
+
+
+
+/* NAV */
+
+nav{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px 70px;
+
+background:#090914dd;
+
+backdrop-filter:blur(10px);
+
+z-index:99;
+
+box-shadow:0 0 25px #00eaff44;
+
+}
+
+
+
+.logo{
+
+font-size:28px;
+
+font-weight:bold;
+
+color:#00eaff;
+
+}
+
+
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+}
+
+
+
+nav li{
+
+margin-left:30px;
+
+}
+
+
+
+nav a{
+
+text-decoration:none;
+
+color:white;
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-around;
+
+padding:70px;
+
+
+background:
+
+linear-gradient(
+90deg,
+#080812,
+#101a35
+);
+
+}
+
+
+
+.hero h1{
+
+font-size:75px;
+
+color:#00eaff;
+
+text-shadow:
+0 0 20px #00eaff;
+
+}
+
+
+
+.hero p{
+
+font-size:22px;
+
+margin:25px 0;
+
+}
+
+
+
+
+.hero button{
+
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:30px;
+
+
+background:#ff2bd6;
+
+color:white;
+
+cursor:pointer;
+
+font-size:17px;
+
+
+box-shadow:
+0 0 25px #ff2bd6;
+
+}
+
+
+
+
+
+.hero img{
+
+width:450px;
+
+border-radius:30px;
+
+box-shadow:
+0 0 40px #00eaff;
+
+}
+
+
+
+
+
+
+
+.title{
+
+text-align:center;
+
+font-size:45px;
+
+margin:90px 0 40px;
+
+color:#00eaff;
+
+}
+
+
+
+
+
+/* GAME CARD */
+
+
+.games{
+
+padding:40px 70px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+
+
+
+.card{
+
+background:#111122;
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:
+
+0 0 25px #00eaff22;
+
+transition:.3s;
+
+border:1px solid #00eaff33;
+
+}
+
+
+
+
+.card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:
+
+0 0 35px #ff2bd655;
+
+}
+
+
+
+.card img{
+
+width:100%;
+
+height:280px;
+
+object-fit:cover;
+
+}
+
+
+
+.info{
+
+padding:25px;
+
+}
+
+
+
+.info h2{
+
+color:#ff2bd6;
+
+}
+
+
+
+.price{
+
+color:#00eaff;
+
+font-size:20px;
+
+font-weight:bold;
+
+margin:15px 0;
+
+}
+
+
+
+
+.play{
+
+width:100%;
+
+padding:13px;
+
+border:none;
+
+border-radius:25px;
+
+
+background:#00eaff;
+
+color:#050510;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+
+
+
+
+
+/* CATEGORY */
+
+
+.category{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.box{
+
+
+padding:25px 40px;
+
+background:#111122;
+
+border-radius:25px;
+
+border:1px solid #ff2bd6;
+
+box-shadow:
+
+0 0 20px #ff2bd633;
+
+}
+
+
+
+
+
+
+
+/* GALLERY */
+
+
+.gallery{
+
+padding:40px 70px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+}
+
+
+
+.gallery img{
+
+width:100%;
+
+height:250px;
+
+object-fit:cover;
+
+border-radius:25px;
+
+transition:.3s;
+
+}
+
+
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 30px #00eaff;
+
+}
+
+
+
+
+
+
+
+
+.about{
+
+width:80%;
+
+margin:auto;
+
+padding:50px;
+
+background:#111122;
+
+border-radius:30px;
+
+text-align:center;
+
+line-height:2;
+
+border:1px solid #00eaff33;
+
+}
+
+
+
+
+
+
+.contact{
+
+width:70%;
+
+margin:50px auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+
+
+
+.contact input,
+.contact textarea{
+
+padding:15px;
+
+border-radius:20px;
+
+background:#111122;
+
+border:1px solid #00eaff;
+
+color:white;
+
+}
+
+
+
+.contact button{
+
+padding:15px;
+
+border:none;
+
+border-radius:25px;
+
+background:#ff2bd6;
+
+color:white;
+
+}
+
+
+
+
+footer{
+
+
+margin-top:80px;
+
+padding:45px;
+
+text-align:center;
+
+
+background:#050510;
+
+color:#00eaff;
+
+
+}
+
+
+
+
+
+@media(max-width:800px){
+
+
+.hero{
+
+flex-direction:column;
+
+}
+
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+
+.hero img{
+
+width:90%;
+
+}
+
+
+
+.games,
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+<nav>
+
+
+<div class="logo">
+
+🎮 Noni Game
+
+</div>
+
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#games">Games</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+
+</nav>
+
+
+
+
+
+
+
+<section class="hero" id="home">
+
+
+
+<div>
+
+
+<h1>
+
+Game<br>
+cool🎮
+
+</h1>
+
+
+<p>
+
+Play the best games and enter another world.
+
+</p>
+
+
+<button onclick="document.getElementById('games').scrollIntoView({behavior:'smooth'})">
+
+Explore Games
+
+</button>
+
+
+</div>
+
+
+
+
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900">
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<h1 class="title">
+
+Game Collection
+
+</h1>
+
+
+
+
+
+<section class="games" id="games">
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800">
+
+
+<div class="info">
+
+<h2>
+
+Cyber Battle
+
+</h2>
+
+
+<p class="price">
+
+Rp 250.000
+
+</p>
+
+
+<button class="play">
+
+Play Now
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=800">
+
+
+<div class="info">
+
+
+<h2>
+
+Adventure World
+
+</h2>
+
+
+<p class="price">
+
+Rp 350.000
+
+</p>
+
+
+<button class="play">
+
+Play Now
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800">
+
+
+<div class="info">
+
+
+<h2>
+
+Racing Pro
+
+</h2>
+
+
+<p class="price">
+
+Rp 200.000
+
+</p>
+
+
+<button class="play">
+
+Play Now
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<h1 class="title">
+
+Categories
+
+</h1>
+
+
+
+<div class="category">
+
+
+<div class="box">
+⚔ Action
+</div>
+
+
+<div class="box">
+🏎 Racing
+</div>
+
+
+<div class="box">
+🧙 Adventure
+</div>
+
+
+<div class="box">
+🎯 Strategy
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<h1 class="title">
+
+Game Gallery
+
+</h1>
+
+
+
+
+<section class="gallery" id="gallery">
+
+
+<img src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=700">
+
+
+<img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=700">
+
+
+<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=700">
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<h1 class="title">
+
+About Us
+
+</h1>
+
+
+<div class="about">
+
+
+<h2>
+
+Nexus Game Store 🎮
+
+</h2>
+
+
+<p>
+The place to buy your favorite games 
+with the latest collection and
+ an exciting gaming experience.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h1 class="title" id="contact">
+
+Contact
+
+</h1>
+
+
+
+<div class="contact">
+
+
+<input placeholder="Your Name">
+
+
+<input placeholder="Email">
+
+
+<textarea placeholder="Message"></textarea>
+
+
+<button onclick="send()">
+
+Send
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+
+<h2>
+
+Nexus Game Store 🎮
+
+</h2>
+
+
+<p>
+
+Play • Explore • Win
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+
+
+function send(){
+
+alert("Thanks for contacting Nexus Game!");
+
+}
+
+
+document.querySelectorAll(".play").forEach(btn=>{
+
+btn.onclick=function(){
+
+alert("Game selected! Have fun!");
+
+}
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Noni Flower Store</title>
+
+
+<style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+background:#fff8f6;
+
+color:#4b3038;
+
+}
+
+
+
+
+/* NAV */
+
+
+nav{
+
+position:fixed;
+top:0;
+
+width:100%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 70px;
+
+background:#ffffffdd;
+
+backdrop-filter:blur(12px);
+
+z-index:99;
+
+box-shadow:0 5px 20px #0001;
+
+}
+
+
+
+.logo{
+
+font-size:28px;
+
+font-weight:bold;
+
+color:#c96b8c;
+
+}
+
+
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+}
+
+
+nav li{
+
+margin-left:30px;
+
+}
+
+
+nav a{
+
+text-decoration:none;
+
+color:#633c4b;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-around;
+
+padding:70px;
+
+background:
+
+linear-gradient(
+135deg,
+#ffe6ef,
+#fff
+);
+
+}
+
+
+
+.hero h1{
+
+font-size:70px;
+
+color:#bd5b7c;
+
+}
+
+
+
+.hero p{
+
+font-size:20px;
+
+margin:25px 0;
+
+}
+
+
+
+.hero button{
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:30px;
+
+background:#c96b8c;
+
+color:white;
+
+cursor:pointer;
+
+font-size:17px;
+
+}
+
+
+
+
+.hero img{
+
+width:430px;
+
+height:430px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+box-shadow:
+0 20px 40px #c96b8c55;
+
+}
+
+
+
+
+
+
+
+.title{
+
+text-align:center;
+
+font-size:45px;
+
+margin:90px 0 40px;
+
+color:#bd5b7c;
+
+}
+
+
+
+
+
+
+/* FLOWER CARD */
+
+
+.flowers{
+
+padding:40px 70px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+border-radius:35px;
+
+overflow:hidden;
+
+box-shadow:0 15px 35px #0001;
+
+transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+.card img{
+
+width:100%;
+
+height:300px;
+
+object-fit:cover;
+
+}
+
+
+
+.info{
+
+padding:25px;
+
+}
+
+
+
+.info h2{
+
+color:#bd5b7c;
+
+}
+
+
+
+.price{
+
+margin:15px 0;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#d994ad;
+
+}
+
+
+
+.buy{
+
+width:100%;
+
+padding:13px;
+
+border:none;
+
+border-radius:25px;
+
+background:#c96b8c;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+
+
+
+
+/* GALLERY */
+
+
+.gallery{
+
+padding:40px 70px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+}
+
+
+
+.gallery img{
+
+width:100%;
+
+height:250px;
+
+object-fit:cover;
+
+border-radius:25px;
+
+transition:.3s;
+
+}
+
+
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+
+
+/* ABOUT */
+
+
+.about{
+
+width:80%;
+
+margin:auto;
+
+background:white;
+
+padding:50px;
+
+border-radius:35px;
+
+text-align:center;
+
+line-height:2;
+
+box-shadow:0 10px 30px #0001;
+
+}
+
+
+
+
+
+
+
+/* CONTACT */
+
+
+.contact{
+
+width:70%;
+
+margin:50px auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+
+
+.contact input,
+.contact textarea{
+
+padding:15px;
+
+border-radius:20px;
+
+border:1px solid #ddd;
+
+}
+
+
+
+.contact button{
+
+padding:15px;
+
+border:none;
+
+border-radius:25px;
+
+background:#bd5b7c;
+
+color:white;
+
+}
+
+
+
+
+
+footer{
+
+margin-top:80px;
+
+padding:45px;
+
+text-align:center;
+
+background:#633c4b;
+
+color:white;
+
+}
+
+
+
+
+
+@media(max-width:800px){
+
+
+.hero{
+
+flex-direction:column;
+
+}
+
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+
+.hero img{
+
+width:300px;
+height:300px;
+
+}
+
+
+.flowers,
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+nav{
+
+padding:20px;
+
+}
+
+
+}
+
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+<nav>
+
+
+<div class="logo">
+
+Noni Flower
+
+</div>
+
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#shop">Shop</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+
+</nav>
+
+
+
+
+
+
+
+<section class="hero" id="home">
+
+
+<div>
+
+
+<h1>
+
+Beautiful<br>
+Flowers 🌷
+
+</h1>
+
+
+<p>
+
+Fresh flowers to brighten your special moments.
+
+</p>
+
+
+<button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
+
+Shop Flowers
+
+</button>
+
+
+</div>
+
+
+
+<img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=900">
+
+
+</section>
+
+
+
+
+
+
+
+<h1 class="title">
+
+Flower Collection
+
+</h1>
+
+
+
+
+<section class="flowers" id="shop">
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=800">
+
+
+<div class="info">
+
+
+<h2>
+
+Rose Bouquet
+
+</h2>
+
+
+<p class="price">
+
+Rp 250.000
+
+</p>
+
+
+<button class="buy">
+
+Order
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=800">
+
+
+<div class="info">
+
+
+<h2>
+
+Spring Flower
+
+</h2>
+
+
+<p class="price">
+
+Rp 180.000
+
+</p>
+
+
+<button class="buy">
+
+Order
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1500759285222-a956c4c68e5e?w=800">
+
+
+<div class="info">
+
+
+<h2>
+
+Luxury Bouquet
+
+</h2>
+
+
+<p class="price">
+
+Rp 400.000
+
+</p>
+
+
+<button class="buy">
+
+Order
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<h1 class="title">
+
+Flower Gallery
+
+</h1>
+
+
+
+<section class="gallery" id="gallery">
+
+
+<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700">
+
+
+<img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700">
+
+
+<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700">
+
+
+</section>
+
+
+
+
+
+
+
+<h1 class="title">
+
+About Flower
+</h1>
+
+
+<div class="about">
+
+
+<h2>
+
+Fresh From Nature 🌸
+
+</h2>
+
+
+<p>
+
+Noni Flower Store offers beautiful flower arrangements for gifts, decorations, and special occasions.
+Each bouquet is handcrafted with love.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<h1 class="title" id="contact">
+
+Contact
+
+</h1>
+
+
+
+<div class="contact">
+
+
+<input placeholder="Your Name">
+
+
+<input placeholder="Email">
+
+
+<textarea placeholder="Message"></textarea>
+
+
+<button onclick="send()">
+
+Send Message
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+
+<h2>
+
+Noni Flower Store 🌷
+
+</h2>
+
+
+<p>
+
+Flowers • Love • Happiness
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+<script>
+
+
+function send(){
+
+alert(" Thank you for contacting Bloom Flower!");
+
+}
+
+
+document.querySelectorAll(".buy").forEach(btn=>{
+
+btn.onclick=function(){
+
+alert(" Your flower order has been received!");
+
+}
+
+});
+
+
+
+</script>
+
+
+</body>
+
+</html>
